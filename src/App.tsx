@@ -1,12 +1,8 @@
-import './App.css'
-import { NEOList } from './components/NEOList/NEOList';
-import { NEOs } from './mock';
+import { NEOPage } from './pages/NEOPage';
 
 function App() {
     return (
-        <>
-            <NEOList neoData={NEOs} />
-        </>
+        <NEOPage />
     )
 }
 

@@ -1,6 +1,6 @@
 import List from '@mui/material/List';
-import { INEO } from '../../types/NEO';
-import { NEOCard } from '../NEOCard/NEOCard';
+import { INEO } from '../types/NEO';
+import { NEOCard } from './NEOCard';
 
 type Props = {
     neoData: INEO[]

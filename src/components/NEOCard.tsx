@@ -1,6 +1,6 @@
 import { CardContent, Typography } from '@mui/material'
 import Card from '@mui/material/Card'
-import { INEO } from '../../types/NEO'
+import { INEO } from '../types/NEO'
 
 type Props = {
     neoInfo: INEO,
