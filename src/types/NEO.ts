@@ -3,5 +3,6 @@ export interface INEO {
     distance: number,
     speed: number,
     number: number,
-    hasLargeNumber: boolean
+    hasLargeNumber: boolean,
+    id: number
 }

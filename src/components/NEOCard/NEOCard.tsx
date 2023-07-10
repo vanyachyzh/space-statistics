@@ -3,11 +3,11 @@ import Card from '@mui/material/Card'
 import { INEO } from '../../types/NEO'
 
 type Props = {
-    data: INEO,
+    neoInfo: INEO,
 }
 
-export const NEOCard: React.FC<Props> = ({data}) => {
-    const {hasLargeNumber, size, speed, distance, number} = data;
+export const NEOCard: React.FC<Props> = ({neoInfo}) => {
+    const {hasLargeNumber, size, speed, distance, number} = neoInfo;
     return (
         <Card
             sx={{
@@ -41,7 +41,6 @@ export const NEOCard: React.FC<Props> = ({data}) => {
                 <Typography variant="body2">
                     {size} km
                 </Typography>
-
 
                 <Typography variant="body2">
                     {number} per day

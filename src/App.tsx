@@ -1,19 +1,11 @@
 import './App.css'
-import { NEOCard } from './components/Card/Card';
-import { INEO } from './types/NEO';
-
-const neo: INEO = {
-    size: 20,
-    speed: 30,
-    distance: 50,
-    number: 100,
-    hasLargeNumber: true
-}
+import { NEOList } from './components/NEOList/NEOList';
+import { NEOs } from './mock';
 
 function App() {
     return (
         <>
-            <NEOCard data={neo} />
+            <NEOList neoData={NEOs} />
         </>
     )
 }
