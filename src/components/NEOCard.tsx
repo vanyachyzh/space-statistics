@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const NEOCard: React.FC<Props> = ({neoInfo}) => {
-    const {hasLargeNumber, size, speed, distance, number} = neoInfo;
+    const {hasLargeNumber, diameter: size, speed, distance, number} = neoInfo;
     return (
         <Card
             sx={{

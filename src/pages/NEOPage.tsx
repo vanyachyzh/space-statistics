@@ -1,8 +1,20 @@
 import { Typography } from '@mui/material';
 import { NEOs } from '../mock';
 import { NEOList } from '../components/NEOList';
+import { useEffect, useState } from 'react';
+import { getData } from '../api/getData';
+import { INEO } from '../types/NEO';
+
+
 
 export const NEOPage = () => {
+    const today = '2023-07-03';
+    const [newNEO, setNewNEO] = useState();
+    // useEffect(() => {
+    //     getData().then((r) => normalizeNEO(r, today))
+    // }, [])
+
+
     return (
         <div style={{
             width: '1100px',

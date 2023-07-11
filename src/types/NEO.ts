@@ -1,5 +1,5 @@
 export interface INEO {
-    size: number,
+    diameter: number,
     distance: number,
     speed: number,
     number: number,

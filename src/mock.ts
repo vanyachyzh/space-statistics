@@ -3,7 +3,7 @@ import { INEO } from "./types/NEO";
 export const NEOs: INEO[] = [
     {
         id: 1,
-        size: 20,
+        diameter: 20,
         speed: 30,
         distance: 50,
         number: 100,
@@ -11,7 +11,7 @@ export const NEOs: INEO[] = [
     },
 
     {        id: 2,
-        size: 20,
+        diameter: 20,
         speed: 30,
         distance: 50,
         number: 100,
@@ -20,7 +20,7 @@ export const NEOs: INEO[] = [
 
     {
         id: 3,
-        size: 20,
+        diameter: 20,
         speed: 30,
         distance: 50,
         number: 100,
@@ -29,7 +29,7 @@ export const NEOs: INEO[] = [
 
     {
         id: 4,
-        size: 20,
+        diameter: 20,
         speed: 30,
         distance: 50,
         number: 100,
@@ -38,7 +38,7 @@ export const NEOs: INEO[] = [
 
     {
         id: 5,
-        size: 20,
+        diameter: 20,
         speed: 30,
         distance: 50,
         number: 100,
@@ -47,7 +47,7 @@ export const NEOs: INEO[] = [
 
     {
         id: 6,
-        size: 20,
+        diameter: 20,
         speed: 30,
         distance: 50,
         number: 100,
