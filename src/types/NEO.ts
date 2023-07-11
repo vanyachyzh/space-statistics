@@ -4,5 +4,6 @@ export interface INEO {
     speed: number,
     number: number,
     hasLargeNumber: boolean,
-    id: number
+    id: number,
+    date: Date
 }

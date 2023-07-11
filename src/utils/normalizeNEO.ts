@@ -1,4 +1,5 @@
 import { INEO } from "../types/NEO";
+import { formatStringToDate } from "./formatDate";
 
 const getLargestDiameter = (NEOsList: any[]): number => {
     const sortedList = NEOsList.sort((a, b) => {
@@ -71,5 +72,6 @@ export const normalizeNEO = (data: any, date: string): INEO => {
         number: getHazardousNEOs(NEOs),
         hasLargeNumber: false,
         diameter: getLargestDiameter(NEOs),
+        date: formatStringToDate(Object.keys(data.near_earth_objects)[0])
     }
 }

@@ -1,19 +1,41 @@
 import { Typography } from '@mui/material';
-import { NEOs } from '../mock';
 import { NEOList } from '../components/NEOList';
 import { useEffect, useState } from 'react';
-import { getData } from '../api/getData';
 import { INEO } from '../types/NEO';
-
-
+import { setHasLargeNumber } from '../utils/setHasLargeNumber';
+import { getData } from '../api/getData';
 
 export const NEOPage = () => {
-    const today = '2023-07-03';
-    const [newNEO, setNewNEO] = useState();
-    // useEffect(() => {
-    //     getData().then((r) => normalizeNEO(r, today))
-    // }, [])
+    const [datesArray, setDatesArray] = useState<Date[]>([]);
+    const [neoList, setNeoList] = useState<INEO[]>([])
 
+    useEffect(() => {
+        const addDate = () => {
+            const currentDate = new Date();
+            const lastDate = datesArray.length > 0 ? datesArray[datesArray.length - 1] : new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+            const nextDate = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate() + 1);
+
+            const updatedDatesArray = [...datesArray, nextDate];
+
+            if (updatedDatesArray.length > 6) {
+                updatedDatesArray.shift();
+            }
+
+            if (nextDate > currentDate) {
+                nextDate.setDate(1);
+            }
+
+            setDatesArray(updatedDatesArray);
+        };
+
+        const intervalId = setInterval(addDate, 3000);
+        getData(datesArray).then(response => setNeoList(response))
+        return () => {
+            clearInterval(intervalId);
+        };
+
+
+    }, [datesArray]);
 
     return (
         <div style={{
@@ -28,8 +50,8 @@ export const NEOPage = () => {
             <Typography align='center' variant='h1' sx={{ fontWeight: 900, color: '#533566', marginBottom: '50px' }}>
                 🌠 Space Statistics
             </Typography>
-            
-            <NEOList neoData={NEOs} />
+
+            <NEOList neoData={setHasLargeNumber(neoList)} />
         </div>
     )
 }
