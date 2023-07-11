@@ -29,7 +29,9 @@ export const NEOPage = () => {
         };
 
         const intervalId = setInterval(addDate, 3000);
+
         getData(datesArray).then(response => setNeoList(response))
+
         return () => {
             clearInterval(intervalId);
         };
